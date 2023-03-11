@@ -78,11 +78,8 @@ body {
 }
 .tab-bayan__mem {
 	margin: 0 auto;
-	padding: 1.25% 0;
-	width: 37.5%;
+	padding: 1% 0;
 	overflow: hidden;
-	transform: scale(0);
-	transition: all 0.3s ease 0s;
 }
 .tab-bayan__mem img{
 	max-width: 100%;
@@ -97,7 +94,6 @@ body {
 }
 .tab-bayan :checked ~ .tab-bayan__mem {
 	display: block;
-	transform: scale(1);
 	transition: all 0.3s ease 0s;
 }
 .tab-bayan :checked ~ .tab-bayan__title span {
@@ -119,7 +115,7 @@ body {
 /*--------------------------------------*/
 
 /*tablet*/
-@media (min-width: 51.25em) {
+@media (min-width: 35.4em) {
 	.bayan__tab, .tab-bayan__title {
 		cursor: pointer;
 	}
@@ -132,15 +128,14 @@ body {
 	.bayan__title {
 		font-size: 2.4rem;
 	}
-	.tab-bayan__cross {
-		width: 50%;
-		height: 50%;
+	.tab-bayan__mem {
+		width: 80%;
 	}
 }
 /*desktop */
-@media (min-width: 75em) {
+@media (min-width: 62em) {
 	body{
-		font-size: 1.6rem;
+		font-size: 1.5rem;
 	}
 	.bayan {
 		max-width: 51.875rem;
@@ -148,5 +143,11 @@ body {
 	}
 	.bayan__title {
 		font-size: 3rem;
+	}
+	.tab-bayan__mem {
+		width: 60%;
+	}
+	.bayan {
+		padding: 2%;
 	}
 }

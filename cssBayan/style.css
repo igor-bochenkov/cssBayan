@@ -1,4 +1,4 @@
-/*NullStyle*/
+/*-NullStyle----------------------------------*/
 * {
 	padding: 0;
 	margin: 0;
@@ -27,7 +27,7 @@ ul li {
 img {
 	vertical-align: top;
 }
-/*--------------------------------------*/
+/*-MainStyle-------------------------------------*/
 .wrapper {
 	width: 100%;
 	min-height: 100%;
@@ -87,32 +87,28 @@ body {
 	border-radius: 1.5%;
 }
 
-/*Functional menu*/
+/*-Functional menu----------------------------*/
 .tab-bayan input,
 .tab-bayan__mem {
 	display: none;
+	transition: all 0.3s ease 0s;
 }
 .tab-bayan :checked ~ .tab-bayan__mem {
 	display: block;
+	/* opacity: 1;
+	visibility: visible; */
 	transition: all 0.3s ease 0s;
 }
-.tab-bayan :checked ~ .tab-bayan__title span {
-	/* transform: rotate(45deg); */
+.tab-bayan :checked ~ .tab-bayan__title .tab-bayan__cross {
+	transform: rotate(45deg);
 	transition: all 0.3s ease 0s;
 }
 .tab-bayan :checked + .tab-bayan__title {
-	/* background-color: #46344E;
-	border-radius: 8px 8px 0 0; */
 	color: #FAED26;
 }
 
-/* .bayan :hover ~ .bayan__tab .tab-bayan__title {
-	color: #FAED26;
-} */
-.bayan:hover .tab-bayan.tab-bayan__title span {
-	display: block;
-}
-/*--------------------------------------*/
+
+/*-Breakpoints-------------------------------------*/
 
 /*tablet*/
 @media (min-width: 35.4em) {
@@ -139,7 +135,7 @@ body {
 	}
 	.bayan {
 		max-width: 51.875rem;
-		padding: 4% 1.2%;
+		padding: 3% 1.1%;
 	}
 	.bayan__title {
 		font-size: 3rem;
@@ -147,7 +143,18 @@ body {
 	.tab-bayan__mem {
 		width: 60%;
 	}
-	.bayan {
-		padding: 2%;
+	.tab-bayan__title {
+		min-height: 1em;
+	}
+	/* ==== commonHover ==== */
+	.tab-bayan__cross {
+		opacity: 0;
+		transition: all 0.3s ease 0s;
+	}
+	.bayan:hover .tab-bayan__cross {
+		opacity: 1;
+	}
+	.bayan:hover .tab-bayan__title {
+		color: #FAED26;
 	}
 }

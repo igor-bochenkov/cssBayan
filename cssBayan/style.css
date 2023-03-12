@@ -30,7 +30,7 @@ img {
 /*-MainStyle-------------------------------------*/
 .wrapper {
 	width: 100%;
-	min-height: 100%;
+	min-height: 110vh;
 	overflow: hidden;
 }
 body {
@@ -65,26 +65,25 @@ body {
 	min-height: 2em;
 
 }
-.tab-bayan__title p {
+.tab-bayan__title span{
 	flex: 0 1 auto;
 	padding-right: 2%;
 	overflow: hidden;
 }
-.tab-bayan__cross {
+.tab-bayan__cross{
 	flex: 0 0 5%;
-}
-.tab-bayan__cross img {
-	max-width: 100%;
+	width: 5%;
 }
 .tab-bayan__mem {
+	display: block;
 	margin: 0 auto;
 	padding: 1% 0;
 	overflow: hidden;
 }
 .tab-bayan__mem img{
 	max-width: 100%;
-	border: 2px solid #46344E;
-	border-radius: 1.5%;
+	border: 0.3em solid #46344E;
+	border-radius: 2%;
 }
 
 /*-Functional menu----------------------------*/
@@ -92,29 +91,25 @@ body {
 .tab-bayan__mem {
 	display: none;
 }
-.tab-bayan :checked ~ .tab-bayan__mem {
+.tab-bayan :checked ~ .tab-bayan__label .tab-bayan__mem {
 	display: block;
 }
-.tab-bayan :checked ~ .tab-bayan__title .tab-bayan__cross {
+.tab-bayan :checked ~ .tab-bayan__label .tab-bayan__cross {
 	transform: rotate(45deg);
 	transition: all 0.3s ease 0s;
 }
-.tab-bayan :checked + .tab-bayan__title {
+.tab-bayan :checked + .tab-bayan__label {
 	color: #FAED26;
 }
 
 /* imageAppearance */
-.tab-bayan :checked ~ .tab-bayan__mem img {
+.tab-bayan :checked ~ .tab-bayan__label .tab-bayan__mem img {
 	animation: imgAppear 0.5s;
 }
 
 /*-Breakpoints-------------------------------------*/
-
 /*tablet*/
-@media (min-width: 35.4em) {
-	.bayan__tab, .tab-bayan__title {
-		cursor: pointer;
-	}
+@media (min-width: 51.25em) and (max-width: 74.94em){
 	body{
 		font-size: 1.25rem;
 	}
@@ -129,9 +124,12 @@ body {
 	}
 }
 /*desktop */
-@media (min-width: 62em) {
+@media (min-width: 75em) {
 	body{
 		font-size: 1.5rem;
+	}
+	.bayan__tab, .tab-bayan__label {
+		cursor: pointer;
 	}
 	.bayan {
 		max-width: 51.875rem;
@@ -149,7 +147,7 @@ body {
 	/* ==== commonHover ==== */
 	.tab-bayan__cross {
 		opacity: 0;
-		transition: all 0.3s ease 0s;
+		transition: opacity 0.3s ease 0s;
 	}
 	.bayan:hover .tab-bayan__cross {
 		opacity: 1;
@@ -158,7 +156,7 @@ body {
 		color: #FAED26;
 	}
 	/* ==== hoverOverItem ==== */
-	.tab-bayan:hover .tab-bayan__mem {
+	.tab-bayan:hover .tab-bayan__label .tab-bayan__mem {
 		display: block;
 	}
 	.tab-bayan:hover .tab-bayan__mem img {
@@ -166,9 +164,23 @@ body {
 	}
 	.tab-bayan:hover .tab-bayan__title .tab-bayan__cross {
 		transform: rotate(45deg);
-		transition: all 0.3s ease 0s;
+		transition: transform 0.3s ease 0s;
+	}
+	/* ==== clickActiveItem ==== */
+	.tab-bayan__label:active {
+		opacity: 0.8;
+		transition: opacity 0.3s ease 0s;
+	}
+	.tab-bayan__label:active .tab-bayan__title span {
+		color: #fff;
+		transition: color 0.3s ease 0s;
 	}
 }
+
+
+
+
+
 
 @keyframes imgAppear {
 	0% {
@@ -180,4 +192,3 @@ body {
 		transform: scale(1);
 	}
 }
-

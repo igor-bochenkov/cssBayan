@@ -91,13 +91,9 @@ body {
 .tab-bayan input,
 .tab-bayan__mem {
 	display: none;
-	transition: all 0.3s ease 0s;
 }
 .tab-bayan :checked ~ .tab-bayan__mem {
 	display: block;
-	/* opacity: 1;
-	visibility: visible; */
-	transition: all 0.3s ease 0s;
 }
 .tab-bayan :checked ~ .tab-bayan__title .tab-bayan__cross {
 	transform: rotate(45deg);
@@ -107,6 +103,10 @@ body {
 	color: #FAED26;
 }
 
+/* imageAppearance */
+.tab-bayan :checked ~ .tab-bayan__mem img {
+	animation: imgAppear 0.5s;
+}
 
 /*-Breakpoints-------------------------------------*/
 
@@ -157,4 +157,27 @@ body {
 	.bayan:hover .tab-bayan__title {
 		color: #FAED26;
 	}
+	/* ==== hoverOverItem ==== */
+	.tab-bayan:hover .tab-bayan__mem {
+		display: block;
+	}
+	.tab-bayan:hover .tab-bayan__mem img {
+		animation: imgAppear 0.5s;
+	}
+	.tab-bayan:hover .tab-bayan__title .tab-bayan__cross {
+		transform: rotate(45deg);
+		transition: all 0.3s ease 0s;
+	}
 }
+
+@keyframes imgAppear {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+

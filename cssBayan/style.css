@@ -40,6 +40,7 @@ body {
 	color: #fff;
 }
 .bayan {
+	max-width: 100%;
 	margin: 0 auto;
 	padding: 4% 2%;
 }
@@ -52,7 +53,7 @@ body {
 }
 .bayan__tab {
 	border-top: 0.1em solid #46344E;
-	padding: 1% 2.5%;
+	padding: 0px 0.5rem;
 }
 .tab-bayan__title {
 	display: flex;
@@ -60,8 +61,7 @@ body {
 	align-items: center;
 	font-weight: 600;
 	transition: all 0.3s ease 0s;
-	min-height: 2.5em;
-
+	margin-bottom: 0.5rem;
 }
 .tab-bayan__title span{
 	flex: 0 1 auto;
@@ -73,24 +73,29 @@ body {
 	width: 5%;
 }
 .tab-bayan__mem {
+	width: 90%;
+	transition: all 0.5s ease 0s;
 	display: block;
 	margin: 0 auto;
-	padding: 1% 0;
+	padding: 1%;
 	overflow: hidden;
+	height: 0;
 }
 .tab-bayan__mem img{
 	max-width: 100%;
 	border: 0.3em solid #46344E;
 	border-radius: 2%;
+	margin-bottom: 1em;
 }
 
 /*-Functional menu----------------------------*/
 .tab-bayan input,
 .tab-bayan__mem {
-	display: none;
+	opacity: 0;
 }
 .tab-bayan :checked ~ .tab-bayan__label .tab-bayan__mem {
-	display: block;
+	opacity: 1;
+	height: 80vw;
 }
 .tab-bayan :checked ~ .tab-bayan__label .tab-bayan__cross {
 	transform: rotate(45deg);
@@ -99,7 +104,6 @@ body {
 .tab-bayan :checked + .tab-bayan__label {
 	color: #FAED26;
 }
-
 /* imageAppearance */
 .tab-bayan :checked ~ .tab-bayan__label .tab-bayan__mem img {
 	animation: imgAppear 0.5s;
@@ -107,7 +111,7 @@ body {
 
 /*-Breakpoints-------------------------------------*/
 /*tablet*/
-@media (min-width: 51.25em) and (max-width: 74.94em){
+@media (min-width: 40em) and (max-width: 74.94em){
 	body{
 		font-size: 1.25rem;
 	}
@@ -118,7 +122,11 @@ body {
 		font-size: 2.4rem;
 	}
 	.tab-bayan__mem {
-		width: 80%;
+		width: 70%;
+	}
+	.tab-bayan :checked ~ .tab-bayan__label .tab-bayan__mem {
+		opacity: 1;
+		height: 25rem;
 	}
 }
 /*desktop */
@@ -136,8 +144,9 @@ body {
 	.tab-bayan__mem {
 		width: 60%;
 	}
-	.tab-bayan__title {
-		min-height: 2em;
+	.tab-bayan :checked ~ .tab-bayan__label .tab-bayan__mem {
+		opacity: 1;
+		height: 30rem;
 	}
 	
 	/* ==== clickActiveItem ==== */
@@ -167,7 +176,8 @@ body {
 	}
 	/* ==== hoverOverItem ==== */
 	.tab-bayan:hover .tab-bayan__label .tab-bayan__mem {
-		display: block;
+		opacity: 1;
+		height: 30rem;
 	}
 	.tab-bayan:hover .tab-bayan__mem img {
 		animation: imgAppear 0.5s;

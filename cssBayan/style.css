@@ -126,9 +126,6 @@ body {
 	body{
 		font-size: 1.5rem;
 	}
-	.bayan__tab, .tab-bayan__label {
-		cursor: pointer;
-	}
 	.bayan {
 		max-width: 51.875rem;
 		padding: 3% 1.1%;
@@ -154,6 +151,9 @@ body {
 	}
 }
 @media (hover: hover) {
+	.bayan__tab, .tab-bayan__label {
+		cursor: pointer;
+	}
 	/* ==== commonHover ==== */
 	.tab-bayan__cross {
 		opacity: 0;
